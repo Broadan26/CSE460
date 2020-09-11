@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/menu_fragment">
+
+    <fragment
+        android:id="@+id/menu_fragment"
+        android:name="com.unit5.unit5project.MenuFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/menu_fragment">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/bmi_calc_fragment" />
+        <action
+            android:id="@+id/action_menu_fragment_to_bmiApiFragment"
+            app:destination="@id/bmi_api_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bmi_calc_fragment"
+        android:name="com.unit5.unit5project.BMICalculatorFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/bmi_calc_fragment"/>
+    <fragment
+        android:id="@+id/bmi_api_fragment"
+        android:name="com.unit5.unit5project.BmiApiFragment"
+        android:label="BmiApiFragment"
+        tools:layout="@layout/bmi_api_fragment" >
+        <action
+            android:id="@+id/action_bmi_api_fragment_to_BMIWeb"
+            app:destination="@id/bmi_web" />
+    </fragment>
+    <fragment
+        android:id="@+id/bmi_web"
+        android:name="com.unit5.unit5project.BMIWeb"
+        android:label="BMIWeb"
+        tools:layout="@layout/bmi_web_fragment"
+        />
+</navigation>
